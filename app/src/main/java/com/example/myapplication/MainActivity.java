@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,5 +44,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button googleBtn = (Button) findViewById(R.id.google);
+        googleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String google = "http://www.google.com";
+                Uri webaddress = Uri.parse(google);
+
+                Intent gotoGoogle = new Intent(Intent.ACTION_VIEW, webaddress);
+                if(gotoGoogle.resolveActivity(getPackageManager())!=null){
+                    startActivity(gotoGoogle);
+                }
+            }
+        });
     }
 }
