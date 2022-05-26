@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent startIntent = new Intent(getApplicationContext(), SecondActivity.class);
                 //show how to pass information to another activity
+                startIntent.putExtra("extraKey", "HELLO WORLD!");
+
                 startActivity(startIntent);
             }
         });
