@@ -21,6 +21,7 @@ public class AlculatorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alculator);
 
+        Intent wasted = new Intent(getApplicationContext(), WastedActivity.class);
         ToggleButton sex = (ToggleButton) findViewById(R.id.sex);
         EditText alcohol = (EditText) findViewById(R.id.alcohol);
         EditText weight = (EditText) findViewById(R.id.weight);
@@ -40,6 +41,11 @@ public class AlculatorActivity extends AppCompatActivity {
                     C -= 0.015;
                     alcPercentage.setText(String.format("%.3f %%", C));
                 }
+                else{
+                    A=0;
+                    C = 0;
+                    alcPercentage.setText(String.format("%.3f %%", C));
+                }
             }
         });
 
@@ -50,6 +56,7 @@ public class AlculatorActivity extends AppCompatActivity {
                 C = 0;
                 alcPercentage.setText(String.format("%.2f %%",C));
                 eqBeer.setText(String.format("%.2f", 22.2*A ));
+                eqSoju.setText(String.format("%.2f", A/8.64));
             }
         });
 
@@ -59,8 +66,10 @@ public class AlculatorActivity extends AppCompatActivity {
                 try {
                     A += 44 * (Double.parseDouble(alcohol.getText().toString()) / 100);
                     C= (A * 0.7894 *0.7) / (10 * Double.parseDouble(weight.getText().toString()) * R(sex.isChecked()));
+                    if(C>0.5){startActivity(wasted);}
                     alcPercentage.setText(String.format("%.3f %%", C));
                     eqBeer.setText(String.format("%.2f", 22.2 * A));
+                    eqSoju.setText(String.format("%.2f", A/8.64));
                 }
                 catch(NumberFormatException e){
                     Toast.makeText(getApplicationContext(), "Enter a value", Toast.LENGTH_LONG).show();
@@ -73,8 +82,10 @@ public class AlculatorActivity extends AppCompatActivity {
                 try {
                     A += 150 * (Double.parseDouble(alcohol.getText().toString()) / 100);
                     C = (A * 0.7894 *0.7) / (10 * Double.parseDouble(weight.getText().toString()) * R(sex.isChecked()));
+                    if(C>0.5){startActivity(wasted);}
                     alcPercentage.setText(String.format("%.3f %%", C));
                     eqBeer.setText(String.format("%.2f", 22.2 * A));
+                    eqSoju.setText(String.format("%.2f", A/8.64));
                 }
                 catch(NumberFormatException e){
                     Toast.makeText(getApplicationContext(), "Enter a value", Toast.LENGTH_LONG).show();
@@ -87,8 +98,10 @@ public class AlculatorActivity extends AppCompatActivity {
                 try {
                     A += 750 * (Double.parseDouble(alcohol.getText().toString()) / 100);
                     C = (A * 0.7894 * 0.7) / (10 * Double.parseDouble(weight.getText().toString()) * R(sex.isChecked()));
+                    if(C>0.5){startActivity(wasted);}
                     alcPercentage.setText(String.format("%.3f %%", C));
                     eqBeer.setText(String.format("%.2f", 22.2 * A));
+                    eqSoju.setText(String.format("%.2f", A/8.64));
                 }
                 catch(NumberFormatException e){
                     Toast.makeText(getApplicationContext(), "Enter a value", Toast.LENGTH_LONG).show();
@@ -99,8 +112,14 @@ public class AlculatorActivity extends AppCompatActivity {
         potentialCriminal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gotoHell = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.addictioncenter.com/alcohol/drunk-driving/"));
-                startActivity(gotoHell);
+                if(C>0) {
+                    Toast.makeText(getApplicationContext(), "Shame on you", Toast.LENGTH_LONG).show();
+                    Intent gotoHell = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.addictioncenter.com/alcohol/drunk-driving/"));
+                    startActivity(gotoHell);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "This application doesn't guarantee you anything. Always think before", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
