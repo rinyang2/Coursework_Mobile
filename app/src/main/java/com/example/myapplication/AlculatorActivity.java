@@ -22,6 +22,7 @@ public class AlculatorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_alculator);
 
         Intent wasted = new Intent(getApplicationContext(), WastedActivity.class);
+        Intent wtf = new Intent(getApplicationContext(), WtfActivity.class);
         ToggleButton sex = (ToggleButton) findViewById(R.id.sex);
         EditText alcohol = (EditText) findViewById(R.id.alcohol);
         EditText weight = (EditText) findViewById(R.id.weight);
@@ -64,12 +65,20 @@ public class AlculatorActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    A += 44 * (Double.parseDouble(alcohol.getText().toString()) / 100);
-                    C= (A * 0.7894 *0.7) / (10 * Double.parseDouble(weight.getText().toString()) * R(sex.isChecked()));
-                    if(C>0.5){startActivity(wasted);}
-                    alcPercentage.setText(String.format("%.3f %%", C));
-                    eqBeer.setText(String.format("%.2f", 22.2 * A));
-                    eqSoju.setText(String.format("%.2f", A/8.64));
+                    if(Double.parseDouble(alcohol.getText().toString())>100){
+                        Toast.makeText(getApplicationContext(), "Interesting drink you've got there", Toast.LENGTH_LONG).show();
+                        startActivity(wtf);
+                    }
+                    else {
+                        A += 44 * (Double.parseDouble(alcohol.getText().toString()) / 100);
+                        C = (A * 0.7894 * 0.7) / (10 * Double.parseDouble(weight.getText().toString()) * R(sex.isChecked()));
+                        if (C > 0.5) {
+                            startActivity(wasted);
+                        }
+                        alcPercentage.setText(String.format("%.3f %%", C));
+                        eqBeer.setText(String.format("%.2f", 22.2 * A));
+                        eqSoju.setText(String.format("%.2f", A / 8.64));
+                    }
                 }
                 catch(NumberFormatException e){
                     Toast.makeText(getApplicationContext(), "Enter a value", Toast.LENGTH_LONG).show();
@@ -80,12 +89,20 @@ public class AlculatorActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    A += 150 * (Double.parseDouble(alcohol.getText().toString()) / 100);
-                    C = (A * 0.7894 *0.7) / (10 * Double.parseDouble(weight.getText().toString()) * R(sex.isChecked()));
-                    if(C>0.5){startActivity(wasted);}
-                    alcPercentage.setText(String.format("%.3f %%", C));
-                    eqBeer.setText(String.format("%.2f", 22.2 * A));
-                    eqSoju.setText(String.format("%.2f", A/8.64));
+                    if(Double.parseDouble(alcohol.getText().toString())>100){
+                        Toast.makeText(getApplicationContext(), "Interesting drink you've got there", Toast.LENGTH_LONG).show();
+                        startActivity(wtf);
+                    }
+                    else {
+                        A += 150 * (Double.parseDouble(alcohol.getText().toString()) / 100);
+                        C = (A * 0.7894 * 0.7) / (10 * Double.parseDouble(weight.getText().toString()) * R(sex.isChecked()));
+                        if (C > 0.5) {
+                            startActivity(wasted);
+                        }
+                        alcPercentage.setText(String.format("%.3f %%", C));
+                        eqBeer.setText(String.format("%.2f", 22.2 * A));
+                        eqSoju.setText(String.format("%.2f", A / 8.64));
+                    }
                 }
                 catch(NumberFormatException e){
                     Toast.makeText(getApplicationContext(), "Enter a value", Toast.LENGTH_LONG).show();
@@ -96,12 +113,20 @@ public class AlculatorActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    A += 750 * (Double.parseDouble(alcohol.getText().toString()) / 100);
-                    C = (A * 0.7894 * 0.7) / (10 * Double.parseDouble(weight.getText().toString()) * R(sex.isChecked()));
-                    if(C>0.5){startActivity(wasted);}
-                    alcPercentage.setText(String.format("%.3f %%", C));
-                    eqBeer.setText(String.format("%.2f", 22.2 * A));
-                    eqSoju.setText(String.format("%.2f", A/8.64));
+                    if(Double.parseDouble(alcohol.getText().toString())>100){
+                        Toast.makeText(getApplicationContext(), "Interesting drink you've got there", Toast.LENGTH_LONG).show();
+                        startActivity(wtf);
+                    }
+                    else {
+                        A += 750 * (Double.parseDouble(alcohol.getText().toString()) / 100);
+                        C = (A * 0.7894 * 0.7) / (10 * Double.parseDouble(weight.getText().toString()) * R(sex.isChecked()));
+                        if (C > 0.5) {
+                            startActivity(wasted);
+                        }
+                        alcPercentage.setText(String.format("%.3f %%", C));
+                        eqBeer.setText(String.format("%.2f", 22.2 * A));
+                        eqSoju.setText(String.format("%.2f", A / 8.64));
+                    }
                 }
                 catch(NumberFormatException e){
                     Toast.makeText(getApplicationContext(), "Enter a value", Toast.LENGTH_LONG).show();
