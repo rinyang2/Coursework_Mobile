@@ -1,41 +1,38 @@
 package com.example.myapplication;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.ToggleButton;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-
-    double C;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button alculator = (Button)  findViewById(R.id.alculator);
-        alculator.setOnClickListener(new View.OnClickListener() {
+        Button addBtn = (Button) findViewById(R.id.addBtn);
+        addBtn.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v) {
-                Intent startAlculator = new Intent(getApplicationContext(), AlculatorActivity.class);
-                startActivity(startAlculator);
+            public void onClick(View view){
+                EditText firstNumEditText = (EditText) findViewById(R.id.editTextTextPersonName);
+                EditText secondNumEditText = (EditText) findViewById(R.id.editTextTextPersonName2);
+                TextView resultTextView = (TextView) findViewById(R.id.resultText);
+
+                int num1 = Integer.parseInt(firstNumEditText.getText().toString());
+                int num2 = Integer.parseInt(secondNumEditText.getText().toString());
+                int result = num1+num2;
+                resultTextView.setText(result+"");
             }
         });
 
-        Button drinks = (Button)  findViewById(R.id.drinks);
-        drinks.setOnClickListener(new View.OnClickListener() {
+        Button secondActivity = (Button)  findViewById(R.id.button2);
+        secondActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent startIntent = new Intent(getApplicationContext(), SecondActivity.class);
@@ -46,6 +43,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
+        Button googleBtn = (Button) findViewById(R.id.google);
+        googleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String google = "http://www.google.com";
+                Uri webaddress = Uri.parse(google);
 
+                Intent gotoGoogle = new Intent(Intent.ACTION_VIEW, webaddress);
+                if(gotoGoogle.resolveActivity(getPackageManager())!=null){
+                    startActivity(gotoGoogle);
+                }
+            }
+        });
+    }
 }
