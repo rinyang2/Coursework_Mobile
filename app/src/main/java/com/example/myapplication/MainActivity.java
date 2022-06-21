@@ -12,13 +12,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-
+    int ticks = 0;
     double C;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,18 @@ public class MainActivity extends AppCompatActivity {
                 startIntent.putExtra("extraKey", "HELLO WORLD!");
 
                 startActivity(startIntent);
+            }
+        });
+
+        Button hidden = (Button)  findViewById(R.id.hiddenbutton);
+        ImageView bluy= (ImageView) findViewById(R.id.bluy);
+        hidden.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ticks++;
+                if(ticks>10){
+                    bluy.setVisibility(View.VISIBLE);
+                }
             }
         });
 
