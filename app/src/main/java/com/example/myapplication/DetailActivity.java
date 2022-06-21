@@ -26,9 +26,18 @@ public class DetailActivity extends AppCompatActivity {
     }
     private int getImg(int index){
         switch(index){
-            case 0: return R.drawable.peach;
-            case 1: return R.drawable.tomato;
-            case 2: return R.drawable.squash;
+            case 0: return R.drawable.beer2;
+            case 1: return R.drawable.wine;
+            case 2: return R.drawable.cider;
+            case 3: return R.drawable.mead;
+            case 4: return R.drawable.sake;
+            case 5: return R.drawable.whiskey;
+            case 6: return R.drawable.tequila;
+            case 7: return R.drawable.rum;
+            case 8: return R.drawable.brandy;
+            case 9: return R.drawable.vodka;
+            case 10: return R.drawable.gin;
+            case 11: return R.drawable.soju;
             default: return -1;
         }
     }

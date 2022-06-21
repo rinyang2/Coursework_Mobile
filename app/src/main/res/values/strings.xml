@@ -2,21 +2,48 @@
     <string name="app_name">My Application</string>
 
     <string-array name="items">
-        <item>peach</item>
-        <item>tomato</item>
-        <item>squash</item>
+        <item>Beer</item>
+        <item>Wine</item>
+        <item>Cider</item>
+        <item>Mead</item>
+        <item>Sake</item>
+        <item>Whiskey</item>
+        <item>Tequila</item>
+        <item>Rum</item>
+        <item>Brandy</item>
+        <item>Vodka</item>
+        <item>Gin</item>
+        <item>Soju</item>
     </string-array>
 
     <string-array name="prices">
-        <item>$0.99</item>
-        <item>$1.49</item>
-        <item>$0.89</item>
+        <item>4~6%</item>
+        <item>5.5~16%</item>
+        <item>3~8.5%</item>
+        <item>6~20%</item>
+        <item>15~16%</item>
+        <item>35~40%</item>
+        <item>40%</item>
+        <item>40%</item>
+        <item>40%</item>
+        <item>40%</item>
+        <item>40%</item>
+        <item>17%</item>
     </string-array>
 
     <string-array name="descriptions">
-        <item>Fresh peaches from Georgia</item>
-        <item>Fresh salad tomatoes from Ohio</item>
-        <item>Fresh yellow squash from California</item>
+        <item>Water, malt, hops, and yeast</item>
+        <item>Red, White, Rose, Sparkling and Fortified</item>
+        <item>The sweet delicacy of Apple</item>
+        <item>Now we know why bees are important</item>
+        <item>Japanese rice wine</item>
+        <item>Next time, ask for Islay</item>
+        <item>Take a shot with salt and lime slice</item>
+        <item>Feel what being a pirate is like</item>
+        <item>Expensive, but worth it</item>
+        <item>Кто ненавидит пить водку</item>
+        <item>Mixed with tonic - simple is the best</item>
+        <item>A cheap green bottle from Korea</item>
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
