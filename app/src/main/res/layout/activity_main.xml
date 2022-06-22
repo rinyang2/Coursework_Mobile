@@ -5,59 +5,75 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/crazyGreen"
     tools:context=".MainActivity">
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="472dp"
-        android:layout_height="852dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.178"
-        app:srcCompat="@drawable/main" />
 
     <Button
         android:id="@+id/drinks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="628dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="68dp"
         android:text="What to drink"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/alculator"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/alculator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="560dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="80dp"
         android:text="Alculator"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/hiddenbutton"
-        android:layout_width="16dp"
-        android:layout_height="12dp"
+        android:layout_width="13dp"
+        android:layout_height="11dp"
         android:backgroundTint="@color/crazyGreen"
         android:contentDescription="easteregg"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/bluy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/alculator"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:srcCompat="@drawable/bluy" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bluy" />
+        app:srcCompat="@drawable/iltd" />
+
+    <ImageView
+        android:id="@+id/bottly_angry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/bottly"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/bottley_angry" />
+
+    <ImageView
+        android:id="@+id/bottly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/bottley" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,6 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     int ticks = 0;
+    int t = 0;
     double C;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +59,19 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        ImageView bottly = (ImageView)  findViewById(R.id.bottly);
+        ImageView bottly_angry = (ImageView)  findViewById(R.id.bottly_angry);
 
+        bottly.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                t++;
+                if(t>7){
+                    bottly.setVisibility(View.INVISIBLE);
+                    bottly_angry.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
 
 }
