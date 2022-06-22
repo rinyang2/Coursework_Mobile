@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">ILTD</string>
 
     <string-array name="items">
         <item>Beer</item>
@@ -34,7 +34,7 @@
     <string-array name="descriptions">
         <item>Water, malt, hops, and yeast</item>
         <item>Red, White, Rose, Sparkling and Fortified</item>
-        <item>The sweet delicacy of Apple</item>
+        <item>Apple could make something good after all</item>
         <item>Now we know why bees are important</item>
         <item>Japanese rice wine</item>
         <item>Next time, ask for Islay</item>
